@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Change Request - jQuery DOM Manipulation</title>
+	<style media="screen">
+		.picture-element.hide {
+			opacity: 0;
+			-webkit-transition: opacity 1s linear;
+			-moz-transition: opacity 1s linear;
+			-ms-transition: opacity 1s linear;
+			-o-transition: opacity 1s linear;
+			transition: opacity 1s linear;
+		}
+	</style>
+	<script>
+		function buttonRemovalFunction () {
+		  // Implement the click handler here for button of class 'remove'
+			var btn = document.querySelectorAll(".remove");
+
+			for(var i=0; i < btn.length; i++) {
+				btn[i].addEventListener("click", function (event) {
+					event.target.parentElement.classList.add("hide");
+					setTimeout(function () {
+						event.target.parentElement.remove();
+					}, 1000);
+				});
+			}
+		}
+	</script>
+</head>
+<body>
+<p>When I click a button the parent div and everything inside must be removed. I also want this animated with CSS3 transitions.</p>
+
+<div class="picture-element">
+  <img src="https://www.digitaslbi.com/globalassets/offices/europe/london/london_thumb2.png" alt="First">
+  <button class="remove">X</button>
+</div>
+
+<div class="picture-element">
+  <img src="https://www.digitaslbi.com/globalassets/offices/europe/madrid/madrid_thumb2.png" alt="Second">
+  <button class="remove">X</button>
+</div>
+
+
+<script type="text/javascript">
+	buttonRemovalFunction();
+</script>
+
+</body>
+</html>

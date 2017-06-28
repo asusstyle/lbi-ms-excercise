@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<script>
+	function groceryItems(pulses, spices) {
+  		// Implement the function here.
+			var spices = document.querySelector("li[data-species="+ pulses +"]").innerHTML;
+
+			console.log(spices);
+	}
+	</script>
+</head>
+<body>
+<p>We have list of grocery items on sale in a shop</p>
+
+<p>Write a function that returns how much of grocery is remaining in stock. For example groceryItems('Rice') would return 'Nearly Emptied'.</p>
+
+<div>
+    <ul data-continent="Pulses">
+        <li data-species="Dal">Very Low</li>
+        <li data-species="Rice">Nearly Emptied</li>
+    </ul>
+    <ul data-continent="Spices">
+        <li data-species="Turmeric">Empty</li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+	groceryItems('Rice');
+</script>
+
+</body>
+</html>
